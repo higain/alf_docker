@@ -44,4 +44,7 @@ RUN sed -i 's:^[ \t]*share.host[ \t]*=\([ \t]*.*\)$:share.host='docker-host':' $
 # Ensure a log file exists ready for tail
 RUN touch $ALFRESCO_HOME/alfresco.log
 
+# Install a license file if one exists
+ADD *.lic $ALFRESCO_HOME/tomcat/shared/classes/alfresco/extension/license
+
 CMD $ALFRESCO_HOME/alfresco.sh start && tail -f $ALFRESCO_HOME/alfresco.log
