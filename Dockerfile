@@ -28,7 +28,7 @@ RUN ./$ALF_INSTALLER_BIN --mode unattended --alfresco_admin_password admin
 # aren't aware of what these ports have been mapped to on the host.
 # For example, if a page in Share spawns an Edit Online session, it will expect
 # 7070 to be accessible on the outside world.
-EXPOSE 8080 7070
+EXPOSE 8080 7070 5701
 
 WORKDIR $ALFRESCO_HOME
 
