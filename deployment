@@ -1,0 +1,28 @@
+# Looks like a bash script, but not yet ready for the prime-time! There is no error handling
+# and so on, so it would not be a good idea to run this as a script.
+#
+# This file essentially serves as a deployment how-to for the moment.
+# To deploy alfresco in docker, execute the lines below one at a time as required.
+
+# Create a data volume container
+# This is used for the content store shared across all repository instances.
+docker run -d --name alfdata -v /alfresco/data ubuntu:14.04 echo 'Alf 4.2 data container'
+
+
+# Create a database server
+# The database 'alfresco' may be accessed by the repositories using username 'postgres'
+# and password '' (empty/none)
+docker run -d -P --name alfdb mattward/alfpostgres
+
+
+
+# Create an alfresco server, mapping the tomcat HTTP connector to 8080
+# If using boot2docker, use 'boot2docker ip' to find the VM's IP address, then it is possible
+# to access http://<ip>:8080/alfresco and http://<ip>:8080/share from the real host (e.g. your Mac).
+docker run -d --hostname docker-host-a --name alfa --link alfdb:alfdb --volumes-from alfdata -p 8080:8080 mattward/alfresco:4.2
+
+# Create a second alfresco instance, add more in the same way but be sure
+# to give them individual host names and map 8080 to a unique port. This one will
+# map the tomcat connector to 8081 on the real host.
+docker run -d --hostname docker-host-b --name alfb --link alfdb:alfdb --volumes-from alfdata -p 8081:8080 mattward/alfresco:4.2
+
