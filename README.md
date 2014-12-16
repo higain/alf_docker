@@ -10,7 +10,7 @@ This project provides some very rough-around-the-edges docker containerisation o
     e.g. enterprise-4.2-developer-cluster-unlimited.lic
 
 2.  Build the images for the Alfresco server and Postgres database server
-    - e.g. make && (cd ../alf_postgres && make)
+    - e.g. make && (cd alf_postgres && make)
 
 3.  Deploy, either:
     - Inspect 'deployment' and execute by hand; or
