@@ -9,7 +9,7 @@ function show_usage
     echo "  -p        Prefix for server names, e.g. -p 42 will create Alfresco servers 42-alf1 42-alf2 etc." >&2
     echo "  -n        Number of Alfresco servers, e.g. -n 2 to create a cluster of two servers." >&2
     echo "Valid commands are:" >&2
-    echo "  create    Create the specified containers."
+    echo "  create    Create the specified containers." >&2
 }
 
 while getopts p:n:h option; do
@@ -22,7 +22,7 @@ while getopts p:n:h option; do
             ;;
         h)
             show_usage
-            exit 1
+            exit 0
             ;;
     esac
 done
@@ -67,6 +67,13 @@ alfresco_image="mattward/alfresco:4.2"
 for (( i = 0; i < $num_alf_servers; i++ )); do
     server_name=${prefix}alf$((i+1))
     external_port=$((i+8081))
-    docker run -d --hostname ${server_name} --name ${server_name} --link $db_server_name:alfdb --volumes-from $data_container_name -p ${external_port}:8080 ${alfresco_image}
+    external_jmx_port=$((i+1088))
+    docker run -d --hostname ${server_name} --name ${server_name} \
+                --link $db_server_name:alfdb \
+                --volumes-from $data_container_name \
+                -p ${external_port}:8080 \
+                -p ${external_jmx_port}:1088 \
+                ${alfresco_image}
+
     echo "${server_name} mapped to port ${external_port}"
 done
