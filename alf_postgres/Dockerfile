@@ -1,5 +1,5 @@
 
-FROM postgres:9.4
+FROM postgres:9.4.3
 MAINTAINER Matt Ward <matt.ward@alfresco.com>
 
 
