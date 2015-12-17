@@ -16,11 +16,11 @@ FROM ubuntu:14.04
 
 MAINTAINER Matt Ward <matt.ward@alfresco.com>
 
-ENV ALF_VER 4.2.5
-ENV ALF_INSTALLER_BIN alfresco-enterprise-${ALF_VER}-installer-linux-x64.bin
+ENV ALF_VER 20151217-SNAPSHOT-591
+ENV ALF_INSTALLER_BIN alfresco-one-installer-${ALF_VER}-linux-x64.bin
 ENV ALF_INSTALL_OPTIONS_FILE install_options.txt
 ENV ALF_INSTALLER_DIR /alfresco/installer
-ENV ALFRESCO_HOME /opt/alfresco-${ALF_VER}
+ENV ALFRESCO_HOME /opt/alfresco-one
 ENV ALF_PROPS_FILE $ALFRESCO_HOME/tomcat/shared/classes/alfresco-global.properties
 
 

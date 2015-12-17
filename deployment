@@ -62,7 +62,7 @@ db_server_name=${prefix}alfdb
 docker run -d -P --name $db_server_name mattward/alfpostgres
 echo "Created database server $db_server_name"
 
-alfresco_image="mattward/alfresco:4.2"
+alfresco_image="mattward/alfresco:5.1-SNAPSHOT"
 
 for (( i = 0; i < $num_alf_servers; i++ )); do
     server_name=${prefix}alf$((i+1))
