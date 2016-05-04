@@ -53,7 +53,7 @@ WORKDIR $ALFRESCO_HOME
 
 
 RUN mkdir /alfresco/data
-RUN echo "dir: `ls -l`"
+RUN echo "dir: `ls -l $ALFRESCO_HOME/tomcat/shared/classes`"
 RUN sed -i 's:^[ \t]*dir.root[ \t]*=\([ \t]*.*\)$:dir.root='/alfresco/data':' $ALF_PROPS_FILE
 
 # Change dir.keystore to point to installed keystore - would be nicer to ADD the keystore
