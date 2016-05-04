@@ -1,7 +1,7 @@
 mode=unattended
 
 enable-components=javaalfresco,libreofficecomponent,alfrescosolr4
-disable-components=postgres,alfrescosolr,alfrescowcmqs,alfrescosharepointimitation,alfrescogoogledocs
+disable-components=postgres,alfrescosolr,alfrescowcmqs,alfrescogoogledocs
 
 # Use JDBC settings for an existing database
 jdbc_url=jdbc:postgresql://alfdb/alfresco
