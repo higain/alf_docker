@@ -59,10 +59,10 @@ echo "Created common data container: $data_container_name"
 # The database 'alfresco' may be accessed by the repositories using username 'postgres'
 # and password '' (empty/none)
 db_server_name=${prefix}alfdb
-docker run -d -P --name $db_server_name mattward/alfpostgres
+docker run -d -P --name $db_server_name alfresco
 echo "Created database server $db_server_name"
 
-alfresco_image="mattward/alfresco:5.1-SNAPSHOT"
+alfresco_image="deltakarlsruhe/alf_docker"
 
 for (( i = 0; i < $num_alf_servers; i++ )); do
     server_name=${prefix}alf$((i+1))
