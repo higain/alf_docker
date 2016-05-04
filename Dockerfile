@@ -31,7 +31,7 @@ RUN apt-get install -y libxext6 libc6 libfreetype6 libx11-6 libxau6 libxdmcp6 li
 #RUN apt-get install -y hostname
 
 WORKDIR /
-RUN chmod +x getCommunityEdition.sh
+# RUN chmod +x getCommunityEdition.sh
 RUN ./getCommunityEdition.sh
 
 RUN mkdir -p $ALF_INSTALLER_DIR
