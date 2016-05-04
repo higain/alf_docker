@@ -53,8 +53,6 @@ WORKDIR $ALFRESCO_HOME
 
 
 RUN mkdir /alfresco/data
-RUN echo "dir: `ls -lR /opt`"
-RUN echo "dir: `ls -lR $ALF_INSTALLER_DIR`"
 RUN sed -i 's:^[ \t]*dir.root[ \t]*=\([ \t]*.*\)$:dir.root='/alfresco/data':' $ALF_PROPS_FILE
 
 # Change dir.keystore to point to installed keystore - would be nicer to ADD the keystore
@@ -71,8 +69,8 @@ ADD dev-log4j.properties $ALFRESCO_HOME/tomcat/shared/classes/alfresco/extension
 # Deploy custom war files
 #ADD *.war $ALFRESCO_HOME/tomcat/webapps/
 
-# Install a license file if one exists
-ADD *.lic $ALFRESCO_HOME/tomcat/shared/classes/alfresco/extension/license/
+# Install a license file if one exists no licences for community edition
+# ADD *.lic $ALFRESCO_HOME/tomcat/shared/classes/alfresco/extension/license/
 
 # Use instead of alfresco.sh -- but it will invoke it.
 # This is only when starting the container, it is fine to run alfresco.sh to start and stop
