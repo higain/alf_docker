@@ -27,7 +27,7 @@ ENV ALF_INSTALLER_DOWNLOADER getCommunityEdition.sh
 
 RUN apt-get update
 # install OpenOffice requirements so that transformation work ok
-RUN apt-get install -y libxext6 libc6 libfreetype6 libx11-6 libxau6 libxdmcp6 libxinerama1 libcups2 libdbus-glib-1-2 libfontconfig1
+RUN apt-get install -y libxext6 libc6 libfreetype6 libx11-6 libxau6 libxdmcp6 libxinerama1 libcups2 libdbus-glib-1-2 libfontconfig1 wget
 # Other utilities
 #RUN apt-get install -y hostname
 
