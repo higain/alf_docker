@@ -17,7 +17,7 @@ FROM ubuntu:14.04
 MAINTAINER Matt Ward <matt.ward@alfresco.com>
 
 ENV ALF_VER 20151217-SNAPSHOT-591
-ENV ALF_INSTALLER_BIN alfresco-one-installer-${ALF_VER}-linux-x64.bin
+ENV ALF_INSTALLER_BIN AlfrescoCommunity.bin
 ENV ALF_INSTALL_OPTIONS_FILE install_options.txt
 ENV ALF_INSTALLER_DIR /alfresco/installer
 ENV ALFRESCO_HOME /opt/alfresco-one
