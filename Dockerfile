@@ -30,6 +30,7 @@ RUN apt-get install -y libxext6 libc6 libfreetype6 libx11-6 libxau6 libxdmcp6 li
 # Other utilities
 #RUN apt-get install -y hostname
 
+RUN cd /
 RUN chmod +x getCommunityEdition.sh
 RUN ./getCommunityEdition.sh
 
