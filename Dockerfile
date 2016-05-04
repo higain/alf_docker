@@ -30,6 +30,8 @@ RUN apt-get install -y libxext6 libc6 libfreetype6 libx11-6 libxau6 libxdmcp6 li
 # Other utilities
 #RUN apt-get install -y hostname
 
+RUN chmod +x getCommunityEdition.sh
+RUN ./getCommunityEdition.sh
 
 RUN mkdir -p $ALF_INSTALLER_DIR
 
@@ -38,8 +40,7 @@ ADD $ALF_INSTALL_OPTIONS_FILE $ALF_INSTALLER_DIR/
 
 WORKDIR $ALF_INSTALLER_DIR
 
-RUN chmod +x getCommunityEdition.sh
-RUN ./getCommunityEdition.sh
+
 
 RUN chmod +x $ALF_INSTALLER_BIN
 RUN ./$ALF_INSTALLER_BIN --optionfile $ALF_INSTALL_OPTIONS_FILE
