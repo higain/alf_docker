@@ -20,7 +20,7 @@ ENV ALF_VER 20151217-SNAPSHOT-591
 ENV ALF_INSTALLER_BIN AlfrescoCommunity.bin
 ENV ALF_INSTALL_OPTIONS_FILE install_options.txt
 ENV ALF_INSTALLER_DIR /alfresco/installer
-ENV ALFRESCO_HOME /opt/alfresco-one
+ENV ALFRESCO_HOME /opt/alfresco-community
 ENV ALF_PROPS_FILE $ALFRESCO_HOME/tomcat/shared/classes/alfresco-global.properties
 ENV ALF_INSTALLER_DOWNLOADER getCommunityEdition.sh
 
