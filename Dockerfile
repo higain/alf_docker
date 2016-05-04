@@ -54,6 +54,7 @@ WORKDIR $ALFRESCO_HOME
 
 RUN mkdir /alfresco/data
 RUN echo "dir: `ls -lR /opt`"
+RUN echo "dir: `ls -lR $ALF_INSTALLER_DIR`"
 RUN sed -i 's:^[ \t]*dir.root[ \t]*=\([ \t]*.*\)$:dir.root='/alfresco/data':' $ALF_PROPS_FILE
 
 # Change dir.keystore to point to installed keystore - would be nicer to ADD the keystore
